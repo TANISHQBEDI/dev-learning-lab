@@ -45,4 +45,27 @@ export class Tasks{
         }
     }
 
+    updateTask(id: number, description: string){
+        const taskIndex = this.tasks.findIndex(task => task.id === id);
+        if(taskIndex === -1){
+            console.warn(`Task with ID ${id} not found.`);
+            return;
+        }
+
+        this.tasks[taskIndex]!.description = description;
+        this.tasks[taskIndex]!.updatedAt = new Date();
+        this.updateStore();
+    }
+
+    deleteTask(id: number){
+        const taskIndex = this.tasks.findIndex(task => task.id === id);
+        if(taskIndex === -1){
+            console.warn(`Task with ID ${id} not found.`);
+            return;
+        }
+
+        this.tasks.splice(taskIndex, 1);
+        this.updateStore();
+    }
+
 }

@@ -23,7 +23,31 @@ export class CLI{
             usage: "list [status]",
             description: "List all tasks, optionally filtered by status",
             run: (args) => {
-                this.tasks.listTasks();
+                this.tasks.listTasks(args[0] as TaskStatus);
+            }
+        },
+        update: {
+            usage: "update <id> <description>",
+            description: "Update a task's description by ID",
+            run: (args) => {
+                if(args.length !== 2){
+                    console.warn("Invalid arguments for 'update' command.");
+                    this.printHelp();
+                    process.exit(1);
+                }
+                this.tasks.updateTask(Number(args[0]), args[1]!);
+            },
+        },
+        delete: {
+            usage: "delete <id>",
+            description: "Delete a task by ID",
+            run: (args) => {
+                if(args.length !== 1){
+                    console.warn("Invalid arguments for 'delete' command.");
+                    this.printHelp();
+                    process.exit(1);
+                }
+                this.tasks.deleteTask(Number(args[0]));
             }
         },
         "--help": {

@@ -50,6 +50,30 @@ export class CLI{
                 this.tasks.deleteTask(Number(args[0]));
             }
         },
+        "mark-in-progress": {
+            usage: "mark-in-progress <id>",
+            description: "Mark a task as in-progress by ID",
+            run: (args) => {
+                if(args.length !== 1){
+                    console.warn("Invalid arguments for 'mark-in-progress' command.");
+                    this.printHelp();
+                    process.exit(1);
+                }
+                this.tasks.markInProgress(Number(args[0]));
+            }
+        },
+        "mark-done": {
+            usage: "mark-done <id>",
+            description: "Mark a task as done by ID",
+            run: (args) => {
+                if(args.length !== 1){
+                    console.warn("Invalid arguments for 'mark-done' command.");
+                    this.printHelp();
+                    process.exit(1);
+                }
+                this.tasks.markDone(Number(args[0]));
+            }
+        },
         "--help": {
             usage: "--help",
             description: "Display usage information",

@@ -68,4 +68,28 @@ export class Tasks{
         this.updateStore();
     }
 
+    markInProgress(id: number){
+        const taskIndex = this.tasks.findIndex(task => task.id === id);
+        if(taskIndex === -1){
+            console.warn(`Task with ID ${id} not found.`);
+            return;
+        }
+
+        this.tasks[taskIndex]!.status = "in-progress";
+        this.tasks[taskIndex]!.updatedAt = new Date();
+        this.updateStore();
+    }
+
+    markDone(id: number){
+        const taskIndex = this.tasks.findIndex(task => task.id === id);
+        if(taskIndex === -1){
+            console.warn(`Task with ID ${id} not found.`);
+            return;
+        }
+
+        this.tasks[taskIndex]!.status = "done";
+        this.tasks[taskIndex]!.updatedAt = new Date();
+        this.updateStore();
+    }
+
 }

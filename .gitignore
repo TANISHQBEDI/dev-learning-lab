@@ -2,9 +2,14 @@
 .vscode/
 .idea/
 
+# Builds
+dist/
+build/
+.out/
+bin/
+
 # Node.js
 node_modules/
 npm-debug.log
 yarn-error.log
 pnpm-debug.log
-dist/

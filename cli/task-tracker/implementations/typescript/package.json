@@ -8,9 +8,9 @@
     "cli-task-tracker-ts": "./bin/index.js"
   },
   "scripts": {
-    "build": "tsc",
-    "start": "node ./bin/index.js",
-    "dev": "tsc --watch"
+    "clean": "del-cli bin",
+    "build": "pnpm clean && tsc",
+    "start": "node ./bin/index.js"
   },
   "keywords": [],
   "author": "Tanishq Bedi",

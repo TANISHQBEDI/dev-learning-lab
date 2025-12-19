@@ -2,6 +2,9 @@
 .vscode/
 .idea/
 
+# Runtime Generated
+.*
+
 # Builds
 dist/
 build/

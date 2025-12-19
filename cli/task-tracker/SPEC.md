@@ -10,7 +10,7 @@
 
 ## Storage
 - File: task-tracker.json
-- Location: OS-specific config directory
+- Location: Project root directory .task-tracker/tasks.json
 - Format:
 ```json
 {
@@ -24,3 +24,12 @@
     }
   ]
 }
+
+## Approach
+- Use a JSON file to store tasks.
+- Each task has a unique ID, description, status (todo, in-progress, done),
+- Use classes and interfaces to structure the code.
+
+## Future Enhancements
+- Add due dates to tasks.
+- Improve error handling and validation.

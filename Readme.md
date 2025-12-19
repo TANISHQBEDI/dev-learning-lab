@@ -16,3 +16,6 @@ It follows a roadmap-based approach, helping me systematically build skills and 
 
 ## Status
 Active
+
+### Note
+- This repo will contain the implementation of the projects in various languages in the future.

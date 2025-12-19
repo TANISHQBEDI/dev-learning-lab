@@ -23,6 +23,11 @@ export class CLI{
             usage: "list [status]",
             description: "List all tasks, optionally filtered by status",
             run: (args) => {
+                if(args.length > 1){
+                    console.warn("Invalid arguments for 'list' command.");
+                    this.printHelp();
+                    process.exit(1);
+                }
                 this.tasks.listTasks(args[0] as TaskStatus);
             }
         },

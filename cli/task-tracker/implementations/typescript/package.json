@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "del-cli bin",
     "build": "pnpm clean && tsc",
-    "start": "node ./bin/index.js"
+    "start": "node ./bin/src/index.js"
   },
   "keywords": [],
   "author": "Tanishq Bedi",

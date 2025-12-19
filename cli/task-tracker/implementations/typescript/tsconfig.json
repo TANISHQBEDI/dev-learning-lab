@@ -1,42 +1,35 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-//     File Layout
-     "rootDir": "./src",
-     "outDir": "./bin",
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "ESNext",
-//    "target": "esnext",
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
 
-    // For nodejs:
-     "lib": ["esnext"],
-     "types": ["node"],
-    // and npm install -D @types/node
-
-    // Other Outputs
+    /* If transpiling with TypeScript: */
+    "module": "NodeNext",
+//    "rootDir": "src",
+    "outDir": "bin",
     "sourceMap": true,
+
+    /* AND if you're building for a library: */
     "declaration": true,
+
+    /* AND if you're building for a library in a monorepo: */
+    "composite": true,
     "declarationMap": true,
 
-    // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
-    "strict": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-    "skipLibCheck": true,
-  }
+    /* If your code doesn't run in the DOM: */
+    "lib": ["es2022"]
+  },
+  "include": ["src"]
 }
